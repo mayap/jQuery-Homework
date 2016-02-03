@@ -1,0 +1,75 @@
+$thirtyPixels: 30px;
+$tenPixels: 10px;
+$blueColor: #0191c8;
+
+#container {
+	margin: 0 auto;
+	width: 500px;
+	margin-top: $thirtyPixels;
+	border: 2px solid $blueColor;
+	border-radius: $tenPixels;
+	padding: 20px $tenPixels $tenPixels 20px;
+	
+	h1 {
+		text-align: center;
+		color: $blueColor;
+	}
+	
+	input {
+		margin-bottom: $tenPixels;
+		height: $thirtyPixels;
+	}
+	
+	.btn {
+		color: #000000;
+		cursor: pointer;
+		font-weight: bold;
+    	height: $thirtyPixels;
+		padding-bottom: 2px;
+		width: 75px; 
+		margin-top: $thirtyPixels;
+	}
+
+	.btn-table {
+		color: #000000;
+		cursor: pointer;
+		font-weight: bold;
+	    height: 25px;
+	}
+	
+	#div-button {
+		text-align: center;
+	}
+	
+	#year {
+		width: 100px;
+	}
+	
+	#model, #make {
+		width: 350px;
+	}
+	
+	#mileage {
+		width: 150px;
+	}
+	
+	#image {
+		display: inline;
+		position: relative;
+		margin-left: 250px;
+		margin-top: -70px;
+		width: 100px;
+	}
+}
+
+table {
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 1%;
+	border: 2px solid $blueColor;
+	
+	th, tr, td {
+	 border: 2px solid $blueColor;
+	 text-align: center;
+	}	
+}

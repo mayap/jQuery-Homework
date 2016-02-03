@@ -1,0 +1,51 @@
+#container {
+  margin: 0 auto;
+  width: 500px;
+  margin-top: 30px;
+  border: 2px solid #0191c8;
+  border-radius: 10px;
+  padding: 20px 10px 10px 20px; }
+  #container h1 {
+    text-align: center;
+    color: #0191c8; }
+  #container input {
+    margin-bottom: 10px;
+    height: 30px; }
+  #container .btn {
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    height: 30px;
+    padding-bottom: 2px;
+    width: 75px;
+    margin-top: 30px; }
+  #container .btn-table {
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    height: 25px; }
+  #container #div-button {
+    text-align: center; }
+  #container #year {
+    width: 100px; }
+  #container #model, #container #make {
+    width: 350px; }
+  #container #mileage {
+    width: 150px; }
+  #container #image {
+    display: inline;
+    position: relative;
+    margin-left: 250px;
+    margin-top: -70px;
+    width: 100px; }
+
+table {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 1%;
+  border: 2px solid #0191c8; }
+  table th, table tr, table td {
+    border: 2px solid #0191c8;
+    text-align: center; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Automobiles</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var arrObj = [];
+				
+				$('form').on('submit', function(event) {
+					event.preventDefault();
+					var thisMake = $('#make').val();
+					var thisModel = $('#model').val();
+					var thisYear = $('#year').val();
+					var thisMileage = $('#mileage').val();
+					
+					var boolMake = Validate(thisMake);
+					var boolModel = Validate(thisModel);
+					
+					error(boolMake, '#make', '#makeError');
+					error(boolModel, '#model', '#modelError');
+					
+					var boolMileage = ValidateNumeric(thisMileage);
+					var boolYear = ValidateNumeric(thisYear);
+					
+					errorNumeric(boolMileage, '#mileage', '#mileageError');
+					errorNumeric(boolYear, '#year', '#yearError');
+					
+					if (boolMake && boolModel && (boolMileage == 1) && (boolYear == 1)) {
+						$( "form" )[0].reset();
+						var obj = {
+							'make': thisMake,
+							'model': thisModel,
+							'year': thisYear,
+							'mileage': thisMileage,
+						};
+						
+						arrObj.push(obj);
+						var row = $('<tr></tr>').appendTo("#info");
+						var count = arrObj.length;
+							
+						$('<td></td>').text(count).appendTo(row);
+						$('<td></td>').text(arrObj[count-1].make).appendTo(row);
+						$('<td></td>').text(arrObj[count-1].model).appendTo(row);
+						$('<td></td>').text(arrObj[count-1].mileage).appendTo(row);
+						$('<td></td>').text(arrObj[count-1].year).appendTo(row);
+						var buttons = $('<button class="delete-row">Delete Row</button>&nbsp;&nbsp;<button id="edit-info">Edit Info</button>').addClass("btn-table");
+						$('<td></td>').html(buttons).appendTo(row);
+						$('<td></td>').text('').appendTo(row).hide();
+						
+						$( ".delete-row" ).on('click', function() {
+							$(this).closest('tr').remove();
+						});
+						
+						$( ".edit-info" ).on('click', function() {
+							
+						});
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		
+		<div id="container">
+			<h1>Automobile Information</h1>
+			<form method="POST" action="">
+			    <label for="make">Make:</label>
+			    <br />
+			    <input type="text" id="make" placeholder="Enter Make">
+			    <span id="makeError"></span>
+			  	<br />
+			  
+			    <label for="model">Model:</label>
+			    <br />
+			    <input type="text" id="model" placeholder="Enter Model">
+			    <span id="modelError"></span>
+			    <br />
+			  
+			    <label for="mileage">Mileage:</label>
+			    <br />
+			    <input type="text" id="mileage" placeholder="Enter Mileage">
+			    <span id="mileageError"></span>
+				<br />
+			  
+			    <label for="year">Year:</label>
+			    <br />
+			    <input type="text" id="year" placeholder="Enter Year">
+			    <span id="yearError"></span>
+			    <br />
+			 
+			  <img src="images/car.png" id="image" />
+			  <br />
+			  <div id="div-button">
+			  	<button type="submit" class="btn">Submit</button>
+			  </div>
+			</form>
+		</div>
+		<br />
+		<table id="info">
+			<tr>
+				<th>#</th>
+				<th>Mark</th>
+				<th>Model</th>
+				<th>Year</th>
+				<th>Mileage</th>
+				<th></th>
+			</tr>
+		</table>
+	</body>
+</html>
